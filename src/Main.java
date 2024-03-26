@@ -1,23 +1,24 @@
-import java.util.Arrays;
-import java.util.List;
+
+import java.util.HashMap;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        ArrayList<Integer> numbs = new ArrayList<>();
-        ArrayList<Integer> non = new ArrayList<>();
-       int a;
-       while((a= in.nextInt()) !=0) {
-         if(numbs.contains(a) && !non.contains(a)) {
-             non.add(a);
-         }
-         else numbs.add(a);
-       }
-       for(int num:non) {
-           System.out.print(num+" ");
-       }
+
+       String a = in.nextLine();
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char c : a.toCharArray()) {
+
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        for(Character as:map.keySet()) {
+            System.out.println("'"+as+"'"+" occurs "+ map.get(as)+" " +"times");
+
+        }
+
+
 
 
     }
